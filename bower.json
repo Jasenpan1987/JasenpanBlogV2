@@ -1,0 +1,21 @@
+{
+  "name": "zfblog_201508",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Jasen Pan <jasenpan@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Jasenpan1987/zfblog_201508",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6"
+  }
+}
