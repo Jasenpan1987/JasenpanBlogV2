@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 var fs = require('fs');
-//var db = mongoose.connect("mongodb://localhost/myblog");
-var db = mongoose.connect('mongodb://123.57.143.189/jpanblog')
+var db = mongoose.connect("mongodb://localhost/myblog");
+//var db = mongoose.connect('mongodb://123.57.143.189/jpanblog')
 db.connection.on("error", function (error) {
     console.log("数据库连接失败：" + error);
 });
