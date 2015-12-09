@@ -31,7 +31,8 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   store: new MongoStore({
-    url: 'mongodb://localhost/myblog'
+    //url: 'mongodb://localhost/myblog'
+    url: 'mongodb://123.57.143.189/jpanblog'
   }),
   cookie:{
     maxAge:30*60*1000//30分钟

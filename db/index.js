@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/myblog');
+//mongoose.connect('mongodb://localhost/myblog');jpanblog
+mongoose.connect('mongodb://123.57.143.189/jpanblog')
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
 mongoose.model('User',new mongoose.Schema({
