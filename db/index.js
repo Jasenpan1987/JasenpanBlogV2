@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-//mongoose.connect('mongodb://localhost/myblog');jpanblog
+//mongoose.connect('mongodb://localhost/myblog');
 mongoose.connect('mongodb://123.57.143.189/jpanblog')
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
@@ -19,6 +19,8 @@ var articleSchema = new mongoose.Schema({
 
 });
 
+
+
 mongoose.model('Article', articleSchema);
 
 var imageSchema = new mongoose.Schema({
@@ -27,6 +29,14 @@ var imageSchema = new mongoose.Schema({
 });
 
 mongoose.model('Image', imageSchema);
+
+
+var MusicSchema = new mongoose.Schema({
+    songName: String,
+    content: Buffer
+});
+
+mongoose.model("Music", MusicSchema);
 
 global.Model = function(modName){
     return mongoose.model(modName);
