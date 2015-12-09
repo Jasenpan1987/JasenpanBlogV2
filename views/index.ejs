@@ -1,3 +1,25 @@
 <% include include/head%>
-index
+<%
+if(articles)
+for(var i=0;i<articles.length;i++){
+    var article = articles[i];
+%>
+<div class="media">
+    <div class="media-left">
+        <a href="#">
+            <img src="http://gravatar.duoshuo.com/avatar/email?s=48" alt="">
+        </a>
+    </div>
+    <div class="media-body">
+        <h4 class="media-heading"><a href="/articles/detail/<%=article._id%>"><%=article.title%></a></h4>
+        <p><%=article.content%></p>
+        <%if(article.image){%>
+            <p><img style="width:50px;height:50px" src="data:image/gif;base64,<%=article.image.filecontent%>" alt=""></p>
+        <%}%>
+    </div>
+</div>
+<%
+}
+%>
+
 <% include include/foot%>

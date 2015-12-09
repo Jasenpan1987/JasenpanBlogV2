@@ -1,0 +1,60 @@
+<% include ../include/head%>
+<h2>搜索结果</h2>
+<%
+if(articles)
+for(var i=0;i<articles.length;i++){
+    var article = articles[i];
+%>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title"><a href="/articles/detail/<%=article._id%>"><%=article.title%></a></h3>
+    </div>
+    <div class="panel-body">
+        <p><%=article.content%></p>
+    </div>
+</div>
+<%
+}
+%>
+
+<nav>
+    <ul class="pagination">
+        <%if(currentPage==1){%>
+            <li class="disabled">
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+        <%}else{%>
+        <li>
+            <a href="/articles/list/<%=(currentPage-1)%>/?keyword=<%=keyword%>" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <%}%>
+        <%for(var i=1; i<=totalPages; i++){%>
+            <%if(i==currentPage){%>
+                <li class="active"><a href="/articles/list/<%=i%>/?keyword=<%=keyword%>"><%=i%></a></li>
+            <%}else{%>
+                 <li><a href="/articles/list/<%=i%>/?keyword=<%=keyword%>"><%=i%></a></li>
+            <%}%>
+        <%}%>
+
+            <%if(currentPage==totalPages){%>
+                <li class="disabled">
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            <%}else{%>
+            <li>
+                <a href="/articles/list/<%=(currentPage+1)%>/?keyword=<%=keyword%>" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            <%}%>
+    </ul>
+</nav>
+<div><%=currentPage%></div>
+<% include ../include/foot%>

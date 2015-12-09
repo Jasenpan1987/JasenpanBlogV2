@@ -4,7 +4,7 @@ var middlewares = require('../middlewares');
 
 /* GET users listing. */
 router.get('/reg', middlewares.checkNotLogin, function(req, res, next) {
-  res.render('users/reg',{});
+  res.render('users/reg',{keyword:''});
 });
 
 router.post('/reg', function(req, res, next) {
@@ -33,7 +33,7 @@ router.post('/reg', function(req, res, next) {
 });
 
 router.get('/login', middlewares.checkNotLogin, function(req, res, next) {
-  res.render('users/login',{});
+  res.render('users/login',{keyword:''});
 });
 
 router.post('/login', function(req, res, next) {
